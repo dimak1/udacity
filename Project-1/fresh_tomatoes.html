@@ -37,6 +37,11 @@
             background-color: #EEE;
             cursor: pointer;
         }
+        .movie-storyline {
+            margin: auto;
+            width: 90%;
+            padding-bottom: 20px;
+        }
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -71,8 +76,8 @@
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-          $('.movie-tile').hide().first().show("fast", function showNext() {
-            $(this).next("div").show("fast", showNext);
+          $('.movie-section').hide().first().fadeIn(500, function showNext() {
+            $(this).next("div").fadeIn(500, showNext);
           });
         });
     </script>
@@ -97,43 +102,150 @@
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">Movie Trailers</a>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="fkPJ3aENjvM" data-toggle="modal" data-target="#trailer">
-    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNDc5Mzg2NTYxNV5BMl5BanBnXkFtZTgwMjQ2ODAwOTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="220" height="342">
-    <h2>The Accountant</h2>
+        <div id="oscars" class="row movie-section">
+            <h1>Oscars Movies</h1>
+            
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="9NJj12tJzqc" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzQxNTIyODAxMV5BMl5BanBnXkFtZTgwNzQyMDA3OTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="100%">
+    <h3>Moonlight</h3>
+    <h4>2017</h4>
+    <div class="movie-storyline">A chronicle of the childhood, adolescence and burgeoning adulthood of a young, African-American, gay man growing up in a rough neighborhood of Miami.</div>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="gsVoD0pTge0" data-toggle="modal" data-target="#trailer">
-    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMjk0NDg4Ml5BMl5BanBnXkFtZTgwODcyNjA5OTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="220" height="342">
-    <h2>Manchester by the Sea</h2>
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="EwdCIpbTN5g" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_SY1000_CR0,0,676,1000_AL_.jpg" width="100%">
+    <h3>Spotlight</h3>
+    <h4>2016</h4>
+    <div class="movie-storyline">The true story of how the Boston Globe uncovered the massive scandal of child molestation and cover-up within the local Catholic Archdiocese, shaking the entire Catholic Church to its core.</div>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="OvW_L8sTu5E" data-toggle="modal" data-target="#trailer">
-    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTUwNjUxMTM4NV5BMl5BanBnXkFtZTgwODExMDQzMTI@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="220" height="342">
-    <h2>Beauty and the Beast</h2>
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="uJfLoE6hanc" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BODAzNDMxMzAxOV5BMl5BanBnXkFtZTgwMDMxMjA4MjE@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="100%">
+    <h3>Birdman</h3>
+    <h4>2015</h4>
+    <div class="movie-storyline">A washed-up actor, who once played a famous superhero, attempts to revive his career by writing and starring in a Broadway play.</div>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="jMi7A20TXoU" data-toggle="modal" data-target="#trailer">
-    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMGQ5Mjc1ZTUtYzVhOS00YWEwLThkYjItNmNhN2ViMDBlZGZlXkEyXkFqcGdeQXVyMzQwMTY2Nzk@._V1_SY1000_CR0,0,675,1000_AL_.jpg" width="220" height="342">
-    <h2>Bushwick</h2>
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="z02Ie8wKKRg" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_.jpg" width="100%">
+    <h3>12 Years a Slave</h3>
+    <h4>2014</h4>
+    <div class="movie-storyline">In the antebellum United States, Solomon Northup, a free black man from upstate New York, is abducted and sold into slavery.</div>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="HqOgkEZDSYc" data-toggle="modal" data-target="#trailer">
-    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNjUxNDcyMjgwOV5BMl5BanBnXkFtZTgwMzY5NjAxMzI@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="220" height="342">
-    <h2>Death Wish</h2>
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="JW3WfSFgrVY" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MjI0MjM0NF5BMl5BanBnXkFtZTcwMTYxMTQ1OA@@._V1_SY1000_CR0,0,675,1000_AL_.jpg" width="100%">
+    <h3>Argo</h3>
+    <h4>2013</h4>
+    <div class="movie-storyline">Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1980.</div>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="KdB5iPt-G3w" data-toggle="modal" data-target="#trailer">
-    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzVjZTdjMWYtZmFhNS00MDRmLTgyNDktYzQwM2M1ZDQyMTg3XkEyXkFqcGdeQXVyNDExMzMxNjE@._V1_SY1000_SX675_AL_.jpg" width="220" height="342">
-    <h2>Mine</h2>
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="YB9Oq0hn5KY" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMzk0NzQxMTM0OV5BMl5BanBnXkFtZTcwMzU4MDYyNQ@@._V1_.jpg" width="100%">
+    <h3>The Artist</h3>
+    <h4>2012</h4>
+    <div class="movie-storyline">A silent movie star meets a young dancer, but the arrival of talking pictures sends their careers in opposite directions.</div>
 </div>
 
+        </div>
+        <div id="box-office" class="row movie-section">
+            <h1>All Time Worldwide Box Office Movies</h1>
+            
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="5PSNL1qE6VY" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_.jpg" width="100%">
+    <h3>Avatar</h3>
+    <h4>2009</h4>
+    <div class="movie-storyline">A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="zCy5WQ9S4c0" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SY1000_CR0,0,671,1000_AL_.jpg" width="100%">
+    <h3>Titanic</h3>
+    <h4>1997</h4>
+    <div class="movie-storyline">A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="sGbxmsDFVnE" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SY1000_CR0,0,677,1000_AL_.jpg" width="100%">
+    <h3>Star Wars: The Force Awakens</h3>
+    <h4>2015</h4>
+    <div class="movie-storyline">Three decades after the Empire's defeat, a new threat arises in the militant First Order. Stormtrooper defector Finn and spare parts scavenger Rey are caught up in the Resistance's search for the missing Luke Skywalker.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="RFinNxS5KN4" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNWEyNTE0YTEtY2FkMi00MmY3LTg4MWMtODdjYjRkNGM4ZTZhXkEyXkFqcGdeQXVyMzI0NDc4ODY@._V1_SY1000_CR0,0,631,1000_AL_.jpg" width="100%">
+    <h3>Jurassic World</h3>
+    <h4>2015</h4>
+    <div class="movie-storyline">A new theme park, built on the original site of Jurassic Park, creates a genetically modified hybrid dinosaur, which escapes containment and goes on a killing spree.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="eOrNdBpGMv8" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg" width="100%">
+    <h3>The Avengers</h3>
+    <h4>2012</h4>
+    <div class="movie-storyline">Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="Skpu5HaVkOc" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQxOTA2NDUzOV5BMl5BanBnXkFtZTgwNzY2MTMxMzE@._V1_SY1000_CR0,0,631,1000_AL_.jpg" width="100%">
+    <h3>Furious 7</h3>
+    <h4>2015</h4>
+    <div class="movie-storyline">Deckard Shaw seeks revenge against Dominic Toretto and his family for his comatose brother.</div>
+</div>
+
+        </div>
+        <div id="other" class="row movie-section">
+            <h1>Other Movies</h1>
+            
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="fkPJ3aENjvM" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNDc5Mzg2NTYxNV5BMl5BanBnXkFtZTgwMjQ2ODAwOTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="100%">
+    <h3>The Accountant</h3>
+    <h4>2016</h4>
+    <div class="movie-storyline">As a math savant uncooks the books for a new client, the Treasury Department closes in on his activities, and the body count starts to rise.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="gsVoD0pTge0" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMjk0NDg4Ml5BMl5BanBnXkFtZTgwODcyNjA5OTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="100%">
+    <h3>Manchester by the Sea</h3>
+    <h4>2016</h4>
+    <div class="movie-storyline">A depressed uncle is asked to take care of his teenage nephew after the boy's father dies.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="OvW_L8sTu5E" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTUwNjUxMTM4NV5BMl5BanBnXkFtZTgwODExMDQzMTI@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="100%">
+    <h3>Beauty and the Beast</h3>
+    <h4>2017</h4>
+    <div class="movie-storyline">An adaptation of the fairy tale about a monstrous-looking prince and a young woman who fall in love.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="jMi7A20TXoU" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMGQ5Mjc1ZTUtYzVhOS00YWEwLThkYjItNmNhN2ViMDBlZGZlXkEyXkFqcGdeQXVyMzQwMTY2Nzk@._V1_SY1000_CR0,0,675,1000_AL_.jpg" width="100%">
+    <h3>Bushwick</h3>
+    <h4>2017</h4>
+    <div class="movie-storyline">When a Texas military force invades their Brooklyn neighborhood, 20-year-old Lucy and war veteran Stupe must depend on each other to survive.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="HqOgkEZDSYc" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNjUxNDcyMjgwOV5BMl5BanBnXkFtZTgwMzY5NjAxMzI@._V1_SY1000_CR0,0,674,1000_AL_.jpg" width="100%">
+    <h3>Death Wish</h3>
+    <h4>2017</h4>
+    <div class="movie-storyline">A mild-mannered father is transformed into a killing machine after his family is torn apart by a violent act.</div>
+</div>
+
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="KdB5iPt-G3w" data-toggle="modal" data-target="#trailer">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzVjZTdjMWYtZmFhNS00MDRmLTgyNDktYzQwM2M1ZDQyMTg3XkEyXkFqcGdeQXVyNDExMzMxNjE@._V1_SY1000_SX675_AL_.jpg" width="100%">
+    <h3>Mine</h3>
+    <h4>2016</h4>
+    <div class="movie-storyline">After a failed assassination attempt, a soldier finds himself stranded in the desert. Exposed to the elements, he must survive the dangers of the desert and battle the psychological and physical tolls of the treacherous conditions.</div>
+</div>
+
+        </div>
     </div>
   </body>
 </html>

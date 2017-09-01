@@ -43,6 +43,11 @@ main_page_head = '''
             background-color: #EEE;
             cursor: pointer;
         }
+        .movie-storyline {
+            margin: auto;
+            width: 90%;
+            padding-bottom: 20px;
+        }
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -77,8 +82,8 @@ main_page_head = '''
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
-          $('.movie-tile').hide().first().show("fast", function showNext() {
-            $(this).next("div").show("fast", showNext);
+          $('.movie-section').hide().first().fadeIn(500, function showNext() {
+            $(this).next("div").fadeIn(500, showNext);
           });
         });
     </script>
@@ -107,13 +112,24 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">Movie Trailers</a>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      {movie_tiles}
+        <div id="oscars" class="row movie-section">
+            <h1>Oscars Movies</h1>
+            {oscars_movie_tiles}
+        </div>
+        <div id="box-office" class="row movie-section">
+            <h1>All Time Worldwide Box Office Movies</h1>
+            {top_movie_tiles}
+        </div>
+        <div id="other" class="row movie-section">
+            <h1>Other Movies</h1>
+            {other_movie_tiles}
+        </div>
     </div>
   </body>
 </html>
@@ -122,9 +138,11 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+<div class="col-md-6 col-lg-2 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+    <img src="{poster_image_url}" width="100%">
+    <h3>{movie_title}</h3>
+    <h4>{movie_year}</h4>
+    <div class="movie-storyline">{movie_storyline}</div>
 </div>
 '''
 
@@ -143,20 +161,24 @@ def create_movie_tiles_content(movies):
 
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
+            movie_year=movie.year,
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movie_storyline=movie.storyline
         )
     return content
 
 
-def open_movies_page(movies):
+def open_movies_page(oscars_movies, top_movies, other_movies):
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
-        movie_tiles=create_movie_tiles_content(movies))
+        oscars_movie_tiles=create_movie_tiles_content(oscars_movies),
+        top_movie_tiles=create_movie_tiles_content(top_movies),
+        other_movie_tiles=create_movie_tiles_content(other_movies))
 
     # Output the file
     output_file.write(main_page_head + rendered_content)
